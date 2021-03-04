@@ -1,3 +1,4 @@
+const { resourceUsage } = require("process");
 
 const ds=[
     {
@@ -100,4 +101,70 @@ for(item of newarr)
     console.log(item);
 }  
 
+----------------------Math Average---------------------------------------------
+var mang=[8,8,6.75];
+function average(arr)
+{
+    var sum = arr.reduce(function(tong, giatri){
+    return tong + giatri
+    },0)
+    const count= arr.length;
+    return sum/count;
+}
+console.log(Math.round(average(mang)));
+
+------------------------------- Always positive----------------------------------
+var mang=[1,4,-3,2,0,-8,-2,9];
+function positiveNumber(arr)
+{
+  var newmang = mang.map(function(value){return Math.abs(value)});
+  for(item of newmang)
+  {
+    console.log(item);
+  }
+}
+
+positiveNumber(mang);
+
+-------------------------------- Object handler-------------------------------------
+
+function student(name, level)
+{
+  this.name=name;
+  this.level=level;
+}
+var sta= new student("sdfs","sdfsdf");
+student.prototype.school = "KhoaPham";
+var stb = new student("bbbb","aaaaa");
+console.log(sta );
+console.log(sta.school);
+console.log(stb.school);
+
+--------------------------------object average--------------------------------------
+function student(toan, ly, hoa){
+  this.diemtoan=toan;
+  this.diemly=ly;
+  this.diemhoa=hoa;
+  this.trungbinh=function(){
+    return Math.round((this.diemtoan +this.diemtoan + this.diemly)/3);
+  }
+}
+let sva= new student(6, 7, 7);
+let svb= new student(8, 9, 6);
+console.log(sva.trungbinh());
+console.log(svb.trungbinh());
+
+-----------------------call back-----------------------------------------------
+var numbers=[1,4,6,23,7];
+function callback(a)
+{
+  console.log("values x 2 =" + a*2);
+}
+
+function sumanddo(arr,callback)
+{
+  let sum= arr.reduce(function(total,item){return total + item},0);
+  callback(sum);
+}
+sumanddo(numbers,callback);
 */

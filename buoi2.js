@@ -167,4 +167,136 @@ function sumanddo(arr,callback)
   callback(sum);
 }
 sumanddo(numbers,callback);
+
+---------------------------------------Ternary operator--------------------------------
+function doSomething(a) {
+  var b;
+  if (a > 0) {
+    b = 1;
+  } else if (a < 0) {
+    b = 2;
+  } else {
+    b = 3;
+  }
+  return b;
+}
+
+function doSomethingTernary(a) {
+  let b;
+  (a>0)? b =1: (a<0)?b=2:b=3;
+  return b;
+}
+console.log(doSomethingTernary(-2))
+console.log(doSomething(-2))
+
+
+var numbers=[3,5,2,5,7,8,3];
+numbers = numbers.reverse();
+for(item of numbers)
+{
+  console.log(item);
+}
+
+--------------------------------dao chuoi-----------------------
+var str="pham van chien";
+var newstr="";
+for(var i=str.length-1;i>=0;i--)
+newstr+=str[i];
+console.log(newstr);
+
+------------------------- viet hoa chu cai dau ----------------------
+var name = "pham van chien";
+function capitalize(name)
+{
+var newname="";
+for(var i=0;i<name.length;i++)
+{
+  if(i==0)
+  {
+     newname+=name[i].toUpperCase();
+  }
+  else if(name[i-1]==" ")
+  {
+    newname+=name[i].toUpperCase();
+  }
+  else
+  {
+    newname+=name[i];
+  }
+}
+return newname;
+}
+console.log(capitalize(name));
+
+--------------------get extention file path--------------------------
+let firststring = "lich .bay hang. ngay.xslx";
+
+
+function getExtensionFilename(filename) {
+	var index = firststring.lastIndexOf('.')+1;
+  var newstring =""
+  for(var i=index;i<firststring.length;i++)
+  {
+    newstring+=firststring[i];
+  }	
+  return newstring;
+}
+
+console.log(getExtensionFilename(firststring));
+
+--------------max of three ---------------------------
+function findMax(a,b,c){
+		var max=a;
+    if(max<b)
+    {
+       max=b;
+    }
+    if(max<c)
+    {
+       max=c;
+    }
+    return max;
+}
+console.log(findMax(3,1,9));
+
+
+var student={
+  name:"chien",
+  getname:function(){
+    console.log("ten toi la "+this.name);
+  }
+}
+student.getname();
+
+var teacher={
+  name:"Khoa Pham"
+}
+var newfnc= student.getname.bind(teacher);
+newfnc();
 */
+function getkey(object){
+  for(item in object)
+  {
+      if(typeof item === "Object")
+      {
+      document.writeln(item);
+      getkey(object[item]);
+      }
+      else
+      return
+  }
+}
+
+var student={
+  name:"chien",
+  class:"1A",
+  quequan:{
+    diachi:"ha noi",
+    hokhau:"ha noi",
+    cmtnd:{
+      soid:"22222",
+      ngaycap:"11/1/2020"
+    }
+  }
+}
+console.log(getkey(student));
